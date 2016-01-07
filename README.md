@@ -1,1 +1,1 @@
-# sample-myworkapp-ios
+# example-restclient-myworkapp-chrome-ext
