@@ -33,11 +33,11 @@ Here is an overview of the MyWork application architecture. Note both this iOS a
 	$ pod install
 	```
 
-   * **NOTE:** **pod install** requires permission to modify project directory. Incase, you run into issues doing pod install modify permissions to project directory by running
+   * **NOTE:** **pod install** requires permission to modify project directory. In case you run into issues doing the pod install modify permissions to the project directory by running
    	```bash
 	sudo chown -R '[username]' ~/example-restclient-myworkapp-ios
 	```
-   Make sure you got **MyTasks.xcworkspace** file generated within xcode project directory.
+   Make sure the **MyTasks.xcworkspace** file was generated within xcode project directory.
 
 2. Install the **MyWork Update Set** in your ServiceNow instance. This is a ServiceNow scoped application which contains the **Task Tracker API** Scripted REST API and related files. Note you must be an admin of your ServiceNow instance to install update sets.
 	1. Obtain the "My Work" update set
