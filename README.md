@@ -1,5 +1,5 @@
 # Example REST Client My Work App: iOS
-This project contains source code for a native [iOS](https://developer.apple.com/ios/) application that interacts with ServiceNow's [REST APIs](https://docs.servicenow.com/integrate/inbound_rest/concept/c_RESTAPI.html) including a [Scripted REST API](https://docs.servicenow.com/integrate/custom_web_services/concept/c_CustomWebServices.html). The simple use case is a "MyWork" application which displays a user's current tasks and allows comments to be added. This application demonstrates how to build the MyWork app using iOS. To see the same use case implemented in Node.js, see [Example REST Client My Work App: Node.js](https://github.com/ServiceNow/example-restclient-myworkapp-nodejs).
+This project contains source code for a native [iOS](https://developer.apple.com/ios/) application that interacts with ServiceNow's [REST APIs](https://docs.servicenow.com/bundle/helsinki-servicenow-platform/page/integrate/inbound_rest/concept/c_RESTAPI.html) including a [Scripted REST API](https://docs.servicenow.com/bundle/helsinki-servicenow-platform/page/integrate/custom_web_services/concept/c_CustomWebServices.html). The simple use case is a "MyWork" application which displays a user's current tasks and allows comments to be added. This application demonstrates how to build the MyWork app using iOS. To see the same use case implemented in Node.js, see [Example REST Client My Work App: Node.js](https://github.com/ServiceNow/example-restclient-myworkapp-nodejs).
 
 ## Architecture
 Here is an overview of the MyWork application architecture. Note both this iOS application and the Node.js application are represented in the diagram.
@@ -9,7 +9,7 @@ Here is an overview of the MyWork application architecture. Note both this iOS a
 
 ## Prerequisites
 * OS X [Xcode 7+](https://developer.apple.com/xcode/) installed
-* A ServiceNow instance ([Geneva Patch 3](https://docs.servicenow.com/release_notes/r_Geneva-Patch-3.html) or later).
+* A ServiceNow instance ([Geneva Patch 3](https://docs.servicenow.com/bundle/geneva-release-notes/page/c2/geneva-patch-3-2.html) or later).
 	* **Don't have a ServiceNow instance?** Get one **FREE** by signing up at https://developer.servicenow.com
 	* Not sure what version of ServiceNow your instance is running?  [Determine running version](http://wiki.servicenow.com/index.php?title=Upgrades_Best_Practices#Prepare_for_Upgrading)
 
@@ -39,7 +39,7 @@ Here is an overview of the MyWork application architecture. Note both this iOS a
 	```
    Make sure the **MyTasks.xcworkspace** file was generated within xcode project directory.
 
-2. Install the **MyWork Update Set** in your ServiceNow instance. This is a ServiceNow scoped application which contains the **Task Tracker API** Scripted REST API and related files. Note you must be an admin of your ServiceNow instance to install update sets.
+2. Install the **MyWork Update Set** in your ServiceNow instance. This is a ServiceNow scoped application which contains the **Task Tracker API** Scripted REST API and related files. Note that you must have the admin role on your ServiceNow instance to install update sets.
 	1. Obtain the "My Work" update set
 		* Download the update set from [share.servicenow.com](https://share.servicenow.com/app.do#/detailV2/e43cf2f313de5600e77a36666144b0b4/overview)
 <br/>--or--
@@ -69,22 +69,22 @@ Here is an overview of the MyWork application architecture. Note both this iOS a
 --------------------------------------------------------------------------
 
 ## About the application
-This is a native iOS application which makes HTTP calls to the **Task Tracker** Scripted REST API to get the list of tasks assigned to the logged-in user and allow them to add comments.
+This is a native iOS application which makes HTTP calls to the **Task Tracker** Scripted REST API to get the list of tasks assigned to the logged-in user and to allow the user to add comments.
 
 ### Functional flow
 
 #### 1. Login
-The app tries to login using previous authentication information stored in the iOS Keychain. If not available it displays the login screen.
+The app tries to login using previous authentication information stored in the iOS Keychain. If not available, the app displays the login screen.
 
 ![Login](/images/login.png)
 
-The login screen prompts you to input your ServiceNow instance name (e.g. if your instance URL is https://myinstance.service-now.com, then enter `myinstance` into the Instance text box).
+The login screen prompts you to input your ServiceNow instance name. For example, if your instance URL is https://myinstance.service-now.com, then enter `myinstance` into the Instance text box.
 
-Enter the user ID and password for a user on the instance. This application uses Basic Authentication to manage user authentication against the ServiceNow REST API. When a user enters credentials, an HTTP GET call is made to retrieve the user account from the `sys_user` table using the REST Table API. This call establishes a session with the ServiceNow instance.
+Enter the user ID and password for a user on the instance. This application uses Basic Authentication to manage user authentication with the ServiceNow REST API. When a user enters credentials, an HTTP GET call is made to retrieve the user account from the `sys_user` table using the REST Table API. This call establishes a session with the ServiceNow instance.
 
 On successful login the app stores authentication info (instance, username, and password) into the iOS keychain and then transitions to the task list view. On login failure, the user is directed to the login screen to reenter credentials.
 
-After login, the application displays the tasks assigned to the user grouped by task type. The application is using the **Task Tracker API** to retrieve the list of tasks from ServiceNow. The logged in user must have access to view these tasks (e.g., Incidents, Problems, Tickets) for them to be returned in the REST API and subsequently displayed in the 'MyWork App'.
+After login, the application displays the tasks assigned to the user grouped by task type. The application uses the **Task Tracker API** to retrieve the list of tasks from ServiceNow. The logged in user must have access to view the tasks (such as Incidents, Problems, Tickets) for those tasks to be returned in the REST API and subsequently displayed in the 'MyWork App'.
 
 **> REST API Call:** Get user details (Table API)
 ```
