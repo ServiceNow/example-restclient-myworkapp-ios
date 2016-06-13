@@ -19,6 +19,7 @@ IN THE SOFTWARE.
 #import "Properties.h"
 #import "Authenticator.h"
 #import "AFHTTPSessionManagerFactory.h"
+#import "AppDelegate.h"
 
 
 @interface LoginViewController ()
@@ -85,7 +86,8 @@ IN THE SOFTWARE.
     // Handle Login Event. Verify if authentication succeeded and redirect to approapriate view or set appropriate error message
     AuthSession *session = [AuthSession sharedSession];
     if([session isAuthenticated]) {
-        
+        AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication]delegate];
+        [appDelegate sendDeviceToken];
         UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"TaskListViewNavController"];
         [self presentViewController:vc animated:YES completion:nil];
     } else {
