@@ -84,7 +84,16 @@ IN THE SOFTWARE.
 
 -(void) postInstallation:(NSString*) token success: (void (^) (NSDictionary* result))success  failure:(void (^)(NSError* error))failure {
     NSString* applicationName = @"MyTasks";
+    
+#define APNS_SANDBOX 1
+    
+    #if APNS_SANDBOX
+    NSString* platform = @"Apple Sandbox";
+    NSLog(@"Using APNs sandbox mode");
+    #endif
+    #if !APNS_SANDBOX
     NSString* platform = @"Apple";
+    #endif
     NSString* endPoint = [NSString stringWithFormat: @"api/now/v1/push/%@/installation", applicationName];
 
     NSDictionary *params = @ {@"platform" :platform, @"token" :token };
