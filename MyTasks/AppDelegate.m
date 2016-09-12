@@ -48,6 +48,11 @@ IN THE SOFTWARE.
 
 - (void)sendDeviceToken {
     RestAPIRequestHandler *apiHandler = [[RestAPIRequestHandler alloc]init];
+
+    if (deviceToken == nil || [deviceToken isEqual:[NSNull null]]) {
+        return;
+    }
+    
     [apiHandler postInstallation:deviceToken success:^(NSDictionary *result) {
         NSLog(@"Sent token to Servicenow");
     } failure:^(NSError *error) {
