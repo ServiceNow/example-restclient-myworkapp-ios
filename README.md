@@ -1,5 +1,10 @@
 # Example REST Client My Work App: iOS
-This project contains source code for a native [iOS](https://developer.apple.com/ios/) application that interacts with ServiceNow's [REST APIs](https://docs.servicenow.com/bundle/helsinki-servicenow-platform/page/integrate/inbound_rest/concept/c_RESTAPI.html) including a [Scripted REST API](https://docs.servicenow.com/bundle/helsinki-servicenow-platform/page/integrate/custom_web_services/concept/c_CustomWebServices.html). The simple use case is a "MyWork" application which displays a user's current tasks and allows comments to be added. This application demonstrates how to build the MyWork app using iOS. To see the same use case implemented in Node.js, see [Example REST Client My Work App: Node.js](https://github.com/ServiceNow/example-restclient-myworkapp-nodejs).
+This project contains source code for a native [iOS](https://developer.apple.com/ios/) application that interacts with ServiceNow's [REST APIs](https://docs.servicenow.com/bundle/helsinki-servicenow-platform/page/integrate/inbound_rest/concept/c_RESTAPI.html) including a [Scripted REST API](https://docs.servicenow.com/bundle/helsinki-servicenow-platform/page/integrate/custom_web_services/concept/c_CustomWebServices.html). The simple use case is a "MyWork" application which displays a user's current tasks and allows comments to be added. This application demonstrates how to build the MyWork app using iOS.
+
+## Flavors of MyWork Application
+* [Example REST Client My Work App: Android](https://github.com/ServiceNow/example-restclient-myworkapp-android-beta) : The "MyWork" application implemented using Android.
+* [Example REST Client My Work App: Node.js](https://github.com/ServiceNow/example-restclient-myworkapp-nodejs) : The "MyWork" application implemented in Node JS.
+* [Example REST Client My Work App: iOS](this repository): The "MyWork" application implemented in iOS.
 
 ## Architecture
 Here is an overview of the MyWork application architecture. Note both this iOS application and the Node.js application are represented in the diagram.
