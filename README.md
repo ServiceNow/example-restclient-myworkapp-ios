@@ -8,7 +8,7 @@ Here is an overview of the MyWork application architecture. Note both this iOS a
 ---------------------------------------------------------------------------
 
 ## Prerequisites
-* OS X [Xcode 7+](https://developer.apple.com/xcode/) installed
+* OS X [Xcode 7.3.1](https://developer.apple.com/download/more/) installed
 * A ServiceNow instance ([Geneva Patch 3](https://docs.servicenow.com/bundle/geneva-release-notes/page/c2/geneva-patch-3-2.html) or later).
 	* **Don't have a ServiceNow instance?** Get one **FREE** by signing up at https://developer.servicenow.com
 	* Not sure what version of ServiceNow your instance is running?  [Determine running version](http://wiki.servicenow.com/index.php?title=Upgrades_Best_Practices#Prepare_for_Upgrading)
